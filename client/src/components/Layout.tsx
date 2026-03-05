@@ -27,8 +27,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           fixed top-0 left-0 h-full z-40 flex flex-col
           transition-transform duration-300
           ${mobileOpen ? "translate-x-0" : "-translate-x-full"}
-          lg:translate-x-0 lg:relative lg:flex
-          w-64
+          md:translate-x-0 md:relative md:flex
+          w-56 md:w-64
         `}
         style={{
           background: "oklch(0.07 0.005 285)",
@@ -36,11 +36,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         }}
       >
         {/* Logo */}
-        <div className="p-6 border-b" style={{ borderColor: "oklch(0.28 0.18 22 / 0.3)" }}>
-          <div className="font-display text-2xl tracking-widest" style={{ color: "oklch(0.42 0.22 22)" }}>
+        <div className="p-3 md:p-6 border-b" style={{ borderColor: "oklch(0.28 0.18 22 / 0.3)" }}>
+          <div className="font-display text-lg md:text-2xl tracking-widest" style={{ color: "oklch(0.42 0.22 22)" }}>
             ALÉM DA
           </div>
-          <div className="font-display text-4xl tracking-widest" style={{ color: "oklch(0.92 0.005 65)" }}>
+          <div className="font-display text-2xl md:text-4xl tracking-widest" style={{ color: "oklch(0.92 0.005 65)" }}>
             NÉVOA
           </div>
           <div
@@ -52,7 +52,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
 
         {/* Nav */}
-        <nav className="flex-1 p-4 space-y-1">
+        <nav className="flex-1 p-2 md:p-4 space-y-1">
           {navItems.map(({ path, label, icon: Icon }) => {
             const active = location === path;
             return (
@@ -111,23 +111,23 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       )}
 
       {/* Main content */}
-      <div className="flex-1 flex flex-col min-w-0">
+      <div className="flex-1 flex flex-col min-w-0 w-full">
         {/* Mobile header */}
         <header
-          className="lg:hidden flex items-center justify-between px-4 py-3 border-b"
+          className="md:hidden flex items-center justify-between px-3 py-2 border-b"
           style={{
             background: "oklch(0.07 0.005 285)",
             borderColor: "oklch(0.28 0.18 22 / 0.3)",
           }}
         >
-          <div className="font-display text-xl tracking-widest" style={{ color: "oklch(0.92 0.005 65)" }}>
-            ALÉM DA NÉVOA
+          <div className="font-display text-lg tracking-widest" style={{ color: "oklch(0.92 0.005 65)" }}>
+            ALÉM DA
           </div>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             style={{ color: "oklch(0.55 0.01 285)" }}
           >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </header>
 
