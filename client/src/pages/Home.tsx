@@ -62,7 +62,7 @@ export default function Home() {
     <Layout>
       {/* HERO */}
       <section
-        className="relative min-h-[520px] flex items-end overflow-hidden"
+        className="relative min-h-[400px] md:min-h-[520px] flex items-end overflow-hidden"
         style={{
           backgroundImage: `url(${HERO_BG})`,
           backgroundSize: "cover",
@@ -100,19 +100,19 @@ export default function Home() {
             Sistema de RPG de Mesa
           </div>
           <h1
-            className="font-display text-6xl md:text-8xl leading-none mb-3"
+            className="font-display text-4xl sm:text-5xl md:text-8xl leading-none mb-2 sm:mb-3"
             style={{ color: "oklch(0.92 0.005 65)", textShadow: "0 0 40px rgba(139,0,0,0.5)" }}
           >
             ALÉM DA
           </h1>
           <h1
-            className="font-display text-6xl md:text-8xl leading-none mb-6"
+            className="font-display text-4xl sm:text-5xl md:text-8xl leading-none mb-4 sm:mb-6"
             style={{ color: "oklch(0.42 0.22 22)", textShadow: "0 0 40px rgba(139,0,0,0.8)" }}
           >
             NÉVOA
           </h1>
           <p
-            className="text-lg max-w-xl leading-relaxed"
+            className="text-sm sm:text-base md:text-lg max-w-xl leading-relaxed"
             style={{ color: "oklch(0.75 0.005 65)", fontFamily: "'Source Serif 4', serif" }}
           >
             Um sistema de RPG de mesa baseado em Dead by Daylight. Sobreviventes tentam escapar enquanto o Assassino os caça pela névoa. Versão 2.3.
@@ -128,12 +128,12 @@ export default function Home() {
           background: "oklch(0.08 0.005 285)",
         }}
       >
-        <div className="container py-6">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="container py-4 sm:py-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-4">
             {systemStats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <div
-                  className="font-display text-3xl"
+                  className="font-display text-xl sm:text-3xl"
                   style={{ color: "oklch(0.42 0.22 22)" }}
                 >
                   {stat.value}
@@ -145,7 +145,7 @@ export default function Home() {
                   {stat.label}
                 </div>
                 <div
-                  className="text-xs mt-1"
+                  className="text-xs mt-1 hidden sm:block"
                   style={{ color: "oklch(0.45 0.01 285)", fontFamily: "'JetBrains Mono', monospace" }}
                 >
                   {stat.desc}
@@ -157,14 +157,14 @@ export default function Home() {
       </section>
 
       {/* QUICK ACCESS */}
-      <section className="container py-12">
-        <div className="flex items-center gap-3 mb-8">
+      <section className="container py-8 sm:py-12">
+        <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
           <Zap size={18} style={{ color: "oklch(0.42 0.22 22)" }} />
-          <h2 className="font-display text-3xl tracking-widest" style={{ color: "oklch(0.92 0.005 65)" }}>
+          <h2 className="font-display text-xl sm:text-3xl tracking-widest" style={{ color: "oklch(0.92 0.005 65)" }}>
             ACESSO RÁPIDO
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {quickLinks.map(({ path, label, desc, icon: Icon }) => (
             <Link key={path} href={path}>
               <div
@@ -225,7 +225,7 @@ export default function Home() {
           style={{ background: "rgba(5,5,5,0.75)" }}
         />
         <div className="container relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
             {/* Survivor */}
             <div
               className="overflow-hidden border"
